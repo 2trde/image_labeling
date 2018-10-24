@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ImageLabelEditor from './ImageLabelEditor'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {log: []}
+  }
+
+  handleLabelDefined(result) {
+    this.setState({log: [...this.state.log, `new point (${result.x}, ${result.y})`]})
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <ImageLabelEditor image_url='sample_image_1.jpg' label_type='point' label_color='red' onLabelDefinied={this.handleLabelDefined.bind(this)}/>
+
+        <code>
+          {this.state.log.map(line => <div>{line}</div>)}
+        </code>
       </div>
-    );
+    )
   }
 }
 
