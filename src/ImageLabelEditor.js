@@ -29,17 +29,6 @@ export default class ImageLabelEditor extends React.Component {
             <span>Point1</span>
           </div>
         </div>
-        <p>Here we will enable you to select points/boxes later</p>
-        <p>But for now you have to enter coordinates</p>
-        <div>
-          X-Coordinate
-          <input value={this.state.point_x} onChange={({target: {value}}) => this.setState({point_x: value})} />
-        </div>
-        <div>
-          Y-Coordinate
-          <input value={this.state.point_y} onChange={({target: {value}}) => this.setState({point_y: value})} />
-        </div>
-        <button onClick={this.handleSubmit.bind(this)}>Submit</button>
       </div>
     )
   }
