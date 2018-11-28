@@ -1,5 +1,4 @@
 import React from 'react'
-import {StyleSheet} from 'react'
 
 /*
  * TODO:
@@ -21,7 +20,7 @@ export default class ImageLabelEditor extends React.Component {
     return (
       <div>
         <div className='image-container'>
-          <img src={this.props.image_url}/>
+          <img src={this.props.image_url} alt='car'/>
           <div className='bounding-box'>
             <div className='handle handle-tl'/>
             <div className='handle handle-br'/>
